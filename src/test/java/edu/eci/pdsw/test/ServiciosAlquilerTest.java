@@ -38,7 +38,7 @@ public class ServiciosAlquilerTest {
     public void setUp() {
     }
 
-    @Test
+    /*@Test
     public void emptyDB() {
         qt().forAll(integers().allPositive()).check((id) -> {
             boolean r = false;
@@ -51,6 +51,6 @@ public class ServiciosAlquilerTest {
             }
              return r;
         });
-    }
+    }*/
 
 }

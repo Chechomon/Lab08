@@ -5,6 +5,8 @@
  */
 package edu.eci.pdsw.samples.entities;
 
+import edu.eci.pdsw.samples.services.ExcepcionServiciosAlquiler;
+import edu.eci.pdsw.samples.services.ServiciosAlquilerFactory;
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -19,12 +21,21 @@ public class ItemRentado implements Serializable {
     private Item item;
     private Date fechainiciorenta;
     private Date fechafinrenta;
+    private int multa;
 
     public ItemRentado(int id, Item item, Date fechainiciorenta, Date fechafinrenta) {
         this.id = id;
         this.item = item;
         this.fechainiciorenta = fechainiciorenta;
         this.fechafinrenta = fechafinrenta;
+    }
+    
+    public int getMulta() throws ExcepcionServiciosAlquiler {
+        return (int)ServiciosAlquilerFactory.getInstance().getServiciosAlquiler().consultarMultaAlquiler(id, fechainiciorenta);
+    }
+
+    public void setMulta(int multa) {
+        this.multa = multa;
     }
 
     public ItemRentado() {

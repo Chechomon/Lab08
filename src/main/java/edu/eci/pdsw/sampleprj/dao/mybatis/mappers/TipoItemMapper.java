@@ -13,7 +13,7 @@ public interface TipoItemMapper {
     
     public List<TipoItem> consultarTiposItems();
     
-    public TipoItem consultarTipoItem(int id);
+    public TipoItem consultarTipoItem(@Param("idtipo") int id);
     
     public void insertarTipoItem(String des);
 }
